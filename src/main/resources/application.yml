@@ -1,0 +1,11 @@
+keycloak:
+  enabled: true
+  realm: realm
+  auth-server-url: http://localhost:8080/auth
+  ssl-required: external
+  resource: admin-cli
+  use-resource-role-mappings: true
+  bearer-only: true
+
+keycloak-admin-username: admin
+keycloak-admin-password: password
