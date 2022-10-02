@@ -9,3 +9,4 @@ keycloak:
 
 keycloak-admin-username: admin
 keycloak-admin-password: password
+keycloak-realm: realm
