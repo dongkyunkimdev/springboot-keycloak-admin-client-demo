@@ -23,9 +23,11 @@ dependencies {
 
 	implementation 'org.keycloak:keycloak-admin-client:19.0.1'
 	implementation 'org.keycloak:keycloak-spring-boot-starter:19.0.1'
+	implementation 'org.mapstruct:mapstruct:1.5.2.Final'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
