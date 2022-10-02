@@ -22,4 +22,11 @@ public class KeycloakController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/send-mail-verify-email")
+    public ResponseEntity sendMailVerifyEmail(@RequestBody @Valid KeycloakDto.EmailRequest request) {
+        keycloakService.sendMailVerifyEmail(request);
+
+        return ResponseEntity.ok().build();
+    }
+
 }

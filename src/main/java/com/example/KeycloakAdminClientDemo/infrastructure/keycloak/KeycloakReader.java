@@ -31,4 +31,14 @@ public class KeycloakReader {
         return false;
     }
 
+    public String getUserId(String email) {
+        var savedUserList = keycloak.realm(realm).users().search(email);
+
+        if (!isExists(savedUserList)) {
+            throw new IllegalArgumentException("user not found");
+        }
+
+        return savedUserList.get(0).getId();
+    }
+
 }

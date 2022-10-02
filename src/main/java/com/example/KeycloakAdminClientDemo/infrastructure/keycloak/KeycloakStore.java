@@ -30,6 +30,14 @@ public class KeycloakStore {
         validateCreate(response);
     }
 
+    public void sendMailVerifyEmail(String userId) {
+        keycloak
+                .realm(realm)
+                .users()
+                .get(userId)
+                .executeActionsEmail(List.of("VERIFY_EMAIL"));
+    }
+
     private void validateCreate(Response response) {
         if (response.getStatus() != HttpStatus.CREATED.value()) {
             throw new RuntimeException("failed to create user");

@@ -31,4 +31,16 @@ public class KeycloakDto {
 
     }
 
+    @Getter
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class EmailRequest {
+
+        @Email
+        @NotEmpty
+        private String email;
+
+    }
+
 }
