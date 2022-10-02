@@ -38,6 +38,14 @@ public class KeycloakStore {
                 .executeActionsEmail(List.of("VERIFY_EMAIL"));
     }
 
+    public void sendMailUpdatePassword(String userId) {
+        keycloak
+                .realm(realm)
+                .users()
+                .get(userId)
+                .executeActionsEmail(List.of("UPDATE_PASSWORD"));
+    }
+
     private void validateCreate(Response response) {
         if (response.getStatus() != HttpStatus.CREATED.value()) {
             throw new RuntimeException("failed to create user");

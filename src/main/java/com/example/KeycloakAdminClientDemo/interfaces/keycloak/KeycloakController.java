@@ -29,4 +29,11 @@ public class KeycloakController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/send-mail-update-password")
+    public ResponseEntity sendMailUpdatePassword(@RequestBody @Valid KeycloakDto.EmailRequest request) {
+        keycloakService.sendMailUpdatePassword(request);
+
+        return ResponseEntity.ok().build();
+    }
+
 }

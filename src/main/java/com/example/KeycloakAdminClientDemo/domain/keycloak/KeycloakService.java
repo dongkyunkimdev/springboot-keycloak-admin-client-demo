@@ -29,4 +29,11 @@ public class KeycloakService {
         keycloakStore.sendMailVerifyEmail(userId);
     }
 
+    @Transactional
+    public void sendMailUpdatePassword(KeycloakDto.EmailRequest request) {
+        var userId = keycloakReader.getUserId(request.getEmail());
+
+        keycloakStore.sendMailUpdatePassword(userId);
+    }
+
 }
